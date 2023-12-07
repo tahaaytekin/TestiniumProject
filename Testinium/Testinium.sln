@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testinium", "Testinium\Testinium.csproj", "{72A8BCF1-1A3F-4956-99A6-BA1C7BB3D85E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceAutomation", "ServiceAutomation\ServiceAutomation.csproj", "{8C43FB96-DC3D-4548-9377-981803BE62B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{72A8BCF1-1A3F-4956-99A6-BA1C7BB3D85E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72A8BCF1-1A3F-4956-99A6-BA1C7BB3D85E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72A8BCF1-1A3F-4956-99A6-BA1C7BB3D85E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C43FB96-DC3D-4548-9377-981803BE62B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C43FB96-DC3D-4548-9377-981803BE62B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C43FB96-DC3D-4548-9377-981803BE62B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C43FB96-DC3D-4548-9377-981803BE62B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

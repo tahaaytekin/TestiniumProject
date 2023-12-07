@@ -1,4 +1,5 @@
 
+using AngleSharp.Text;
 using Docker.DotNet.Models;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -44,24 +45,34 @@ namespace Testinium
             IWebElement amount = webDriver.FindElement(By.XPath("/html/body/div[6]/div[2]/div/div[2]/div/div/div[1]/div/div/span/span"));
             
             Assert.True(amount.Displayed);
+           
             string productAmount = amount.Text;
-            
+            string a = productAmount.Remove(5, 3);
+
             webDriver.FindElement(By.XPath("//*[@id=\"sizes\"]/div/span[2]")).Click();
             webDriver.FindElement(By.Id("addBasket")).Click();
             Thread.Sleep(1000);
             webDriver.FindElement(By.CssSelector("body > header > div > div > div.col.col-xl-3.d-flex.justify-content-end > div > a.o-header__userInfo--item.bwi-cart-o.-cart > span")).Click();
             #endregion
-            #region Select Product Quantity
+            #region Product Price Comparison
             Thread.Sleep(3000);
-            webDriver.FindElement(By.Id("quantitySelect0-key-0")).Click();
-            webDriver.FindElement(By.CssSelector("#quantitySelect0-key-0 > option:nth-child(2)")).Click();
-            Thread.Sleep(3000);
-          
+
             IWebElement totalAmount = webDriver.FindElement(By.CssSelector("body > div.wrapper > div.container.m-basket > div > div > div.col-12.col-md-12.col-lg-4 > div.m-orderSummary > div.m-orderSummary__body > ul > li:nth-child(1) > span.m-orderSummary__value"));
             Assert.True(totalAmount.Displayed);
-            string totalProductAmount = totalAmount.Text+(",00 TL");
-           
-            Assert.Equal(productAmount, totalProductAmount);
+            string totalProductAmount = totalAmount.Text;
+            string b = totalProductAmount.Remove(5, 6);
+
+            Assert.Equal(a, b);
+            #endregion
+            #region Select Product Quantity
+            webDriver.FindElement(By.Id("quantitySelect0-key-0")).Click();
+            webDriver.FindElement(By.CssSelector("#quantitySelect0-key-0 > option:nth-child(2)")).Click();
+            
+            Thread.Sleep(3000);
+            #endregion
+
+            #region Product Delete
+            webDriver.FindElement(By.Id("removeCartItemBtn0-key-0")).Click();
             #endregion
         }
     }
